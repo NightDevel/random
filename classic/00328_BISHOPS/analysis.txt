@@ -1,0 +1,5 @@
+answer is : 2 * n - 2
+
+opposite ends of the board:
+one end: n bishops
+other end: n-2 bishops
