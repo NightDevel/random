@@ -1,4 +1,4 @@
-/* 16281. War
+16281. War
 
 Problem code: TAP2013G
 
@@ -52,37 +52,7 @@ Output: 1 Example 2
 Input: 4 6 3 1 4 2 7 4 3
 
 Output: 3
-*/
-#include <stdio.h>
-#include <stdlib.h>
 
-int compare(const void *a, const void *b)
-{
-    return (*(int *)a < *(int *)b);
-}
-
-int main()
-{
-    int n;
-    int i, j;
-    int Q[10000+5];
-    int N[10000+5];
-
-    scanf("%d", &n);
-    for (i = 0; i < n; i++) 
-        scanf("%d", &Q[i]);
-
-    for (i = 0; i < n; i++) 
-        scanf("%d", &N[i]);
-    
-    qsort(Q, n, sizeof(int), compare);
-    qsort(N, n, sizeof(int), compare);
-   
-    for (i = 0, j = 0; i < n && j < n; j++) {
-        if (N[i] > Q[j])
-            i++; 
-    }
-    printf("%d\n", i);
-    return 0;
-}
+Analysis:
+best winning stratergy is sort the elements, compare from N perspective only 
 
