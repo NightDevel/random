@@ -31,7 +31,11 @@ int main()
 	n = nbits(a);
 	new = a;
 	while (nbits(++new) != n);
-	printf("%d\n", new);
 	print_bin(a);
+	printf("%d:", new);
+	print_bin(new);
+	new = a;	
+	while (--new > 0 && nbits(new) != n);
+	printf("%d:", new);
 	print_bin(new);
 }
