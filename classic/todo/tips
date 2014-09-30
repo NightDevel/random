@@ -1,3 +1,5 @@
 1. can exhaustively search all the answers do it
 2. Floats cannot be represented as we like, i.e 1.45 is stored as 1.450005 which gives inpredictable results, then use double
 3. use lld for printing long long int
+4. If algo is right check for long long of variables
+   Use long long instead of long long int which is weird
