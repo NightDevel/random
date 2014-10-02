@@ -1,0 +1,46 @@
+7870. Invisible point
+
+Problem code: ADV04J
+
+
+
+Daniel marked a point on a plane with sympathetic ink and he has also drawn a regular n-gon with normal ink. Max can see the n-gon, but can't see the point. Max can draw a line and ask Daniel which side of the line the point is. What is the minimum number of questions Max have to ask to define if the point is inside the n-gon in the worst case?
+
+Input
+
+First line of the input contains number t - the amount of test cases. Each test consists of the single integer n - the amount of sides of the n-gon.
+
+Constraints
+
+1 <= t <= 100
+3 <= n <= 1000000
+
+Output
+
+For each test case print a single number - the anwer to the questiong in the statement.
+
+Example
+
+Input:
+1
+4
+
+Output:
+3
+
+Analysis:
+========
+
+1. A triangle requires 3 questions
+2. A four sides requires:
+    Divide the polygon into two equal (almost equal) parts.
+    drawing a line between two alternate or opposite points and 
+    asking a question will help is isolating one of the triangles.
+    As already one side is selected only two other questions needs to be aksed.
+3. 5 sides.
+    Drawing a line between points (1,2,3,4,5) 1 and 4 creates a triangle and a 4 sided polygon.
+   so max questions = 1 (for drawing a line and asking) + check for four sides polygon
+4. 6 sides: as a  5 sides
+5. 7 sies : 1 + 5 sides polygon
+
+t(n) = t((n+1)/2) + 1

@@ -1,9 +1,12 @@
 #include <stdio.h>
 int parent[10000+10];
+
 int get_parent(int n)
 {
-	while (n != parent[n])
+	while (n != parent[n]) {
+        parent[n] = parent[parent[n]];
 		n = parent[n];
+    }
 	return n;
 }
 int main()
