@@ -1,0 +1,50 @@
+Tips n Tricks:
+=============
+- If "int main" is give eg: "main" then default function prototype is int and return value is 0"
+- Do not include stdio.h will reduce the code
+- Reuse global variables as much as possible
+- Renames variables and functions to single alphabets
+- Global variables if not explicitly defined are implicitly defined to be "int"
+- Use macros to replace repeated statements eg: while(....) can be replaced with 
+#define w while(
+- assiging values to variables
+  say we have declare a local variable inside a function, typically it takes 
+  int a=20; 9 characters
+
+  func(a)
+  {
+  }
+
+  main()
+  {
+   func(20)
+  }
+  this way: 3 characters
+- push statments into loops as much as  possible as it reduces the two {} 
+  
+  while (1) {
+        scanf("%d", &a);
+        if (!a)
+            break;
+ }
+  can be written as 
+  while(scanf("%d", &a), a);
+
+- removing multiple assignment statements
+    n=n+1;
+    g = n + t;
+    g = n+++t;
+
+- multiply 
+    d=a>b?c:0 
+    d=(a>b)*c
+
+-use pointer increment for array's
+    *g++=10
+
+- Replace for with while reduces ";"
+    for(t=10; t>0;t--)
+    t=10
+    while(--t)
+
+- Use +=,%=,/= to further reduce code.
