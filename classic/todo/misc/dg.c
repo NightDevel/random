@@ -1,35 +1,29 @@
-#include<stdio.h>
-typedef long long l;
-l G[20], *g, a, b, k, c;
-void cd(l n)
+long long G[20], *g, a, k, c, z = 10, p, t, n;
+
+Y(d)
 {
-	l p = 1, t = n, d = 0;
-	while (t) {
-		d++;
-		t = t / 10;
-		p *= 10;
-	}
-	while (d--, p = p / 10) {
+	p = 1, t = n;
+	while (d++, p *= z, t /= z) ;
+	while (d--, p /= z) {
 		c = n / p;
-		for (t = 1; t <= 9; t++)
-			g[t] += c * d * p / 10 + (t < c ? p : 0);
-		g[c] += (n = n % p) + 1;
+		for (t = 1; t < z; t++)
+			g[t] += c * d * p / z + (t < c ? p : 0);
+		g[c] += (n %= p) + 1;
 	}
 }
 
-int main()
+main()
 {
-	while (scanf("%lld%lld", &a, &b), k = a + b) {
-		a = a > b ? b : a;
+	while (scanf("%lld%lld", &a, &n), k = a + n) {
+		a = a > n ? n : a;
 		g = G;
-		cd(a - 1);
-		g += 10;
-		cd(k - a);
-		for (k = 1; k < 10; k++) {
+		n = a - 1;
+		Y(0);
+		g += z;
+		n = k - a;
+		Y(0);
+		for (k = 1; k < z; g[k] = G[k] = 0, k++)
 			printf("%lld ", g[k] - G[k]);
-			G[k] = g[k] = 0;
-		}
 		puts("");
 	}
-	return 0;
 }
