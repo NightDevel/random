@@ -1,4 +1,32 @@
 #include <stdio.h>
+long long power_mod(long long a, int p, int m)
+{
+    long long c = 1;
+    while (p > 1) {
+        if (p%2 == 0) {
+            a = (a*a)%m;
+            p = p/2;
+        }
+        else {
+            c = (c * a)%m;
+            p--;
+        }
+    }
+    return (c*a)%m;
+}
+
+
+long long power_mod2(long long a, int p, int m)
+{
+    if (p == 1)
+        return a%m;
+
+    if (p%2 == 0)
+        return power_mod(a*a, p/2, m)%m;
+    else
+        return (a*power_mod(a*a, (p-1)/2, m))%m;
+
+}
 int factorial_mod(int N, int P)
 {
 	if (N >= P)
@@ -56,27 +84,47 @@ int factorial_mod(int N, int P)
 						
 		due to fermats little theorem
 
-		finally find (P-a)^(P-2)(MOD P)
+		finally to find k compute (P-a)^(P-2)(MOD P)
 
 		do repeated exponentiation and find the result.
 		*/
-		
-		long long mul = 1;
-		for (i = 1; (P+i) <= N; i++) {
-			mul *= mul * i;
-			if (mul > P)
-				mul = mul % P;
-		}
-		mul = mul * (P-1);
-		return (mul*(P-1))%P)
+        int i;
+        long long mul;    
+        /* Procedure 1 */
+        if ((P-(N+1)) > N) {    
+            mul = 1;
+            for (i = 1; i <= N; i++) {
+                mul *= i;
+                if (mul > P)
+                    mul = mul % P;
+            }
+            return (mul%P);
+        }
+
+        /* Procedure 2 */ 
+        long long a = 1;
+        int max_terms = P-(N+1);
+        for (i = 1; i <= max_terms; i++) {
+            a *= i;
+            if (a > P)
+                a = a % P;
+        }
+        /*Number of terms is even, then result is -a, if not ignore 
+         * -a%P is same as (P-a)%P
+         */
+        if (max_terms % 2 == 0)
+            a = P - a;
+      
+        return power_mod(a, P-2, P); 
 }
+
 int main()
 {
     int t;
 	int N, P;
     scanf("%d", &t);
     while (t--){
-		scanf("%d %d", N, P);
+		scanf("%d %d", &N, &P);
 		printf("%d\n", factorial_mod(N, P));
     }
     return 0;
