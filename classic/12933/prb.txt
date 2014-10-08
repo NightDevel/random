@@ -1,0 +1,52 @@
+12933. n-divisors
+
+Problem code: NDIV
+
+
+
+we all know about prime numbers, prime number is a natural number greater than 1 that has no positive divisors other than 1 and itself .
+
+we can Classify the numbers by its number of divisors, as n-divisors-numbers, for example number 1 is 1-divisor number, number 4 is 3-divisors-number... ect .
+
+Note: all prime numbers are 2-divisors numbers.
+
+example :
+8 is a 4-divisors-number [1,2,4,8].
+
+Input
+
+three integers a, b, n.
+
+Output
+
+print single line the number of n-divisors numbers between a and b inclusive.
+
+
+Example
+
+Input:
+1 7 2
+Output:
+4
+
+constraints
+
+1 <= a,b<=10^9
+0 <=b - a <= 10^4 .
+1<= n <= 100
+
+
+Analysis:
+steps:
+find all primes sqrt(1000000000): upto 32000
+
+for i in [a,b]
+do the following
+
+find all factors of a
+
+possible factors = a1^p1 * a2^p2 a3^p3 
+result = (p1+1)(p2+2)(p2+3) 
+while checking for all factors which divide a, 
+count the number of times each prime will divide a. then reduce a, then recaculate the max 
+prime that can divide remaining a.
