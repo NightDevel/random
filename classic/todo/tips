@@ -14,3 +14,6 @@
 
 .  Check for the boundary conditions all boundary conditions in the 
 	while or if statements, RAMA n Friends problem
+
+. precompute results and do binary search
+
