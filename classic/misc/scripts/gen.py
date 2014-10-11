@@ -1,14 +1,11 @@
 #!/usr/bin/python
 import random as r
-print 100
-print r.randint(0,100)
-a=[r.randint(-100000, 100000) for i in range(100)]
-for i in a:
-	print i
-
-print "=========="
-b=sorted(a)
-print b
-print sum(b)
+print 100000
+for i in range(100000):
+    a,b=[r.randint(-2147483648, 2147483648-1) for i in range(2)]
+    if a > b:
+        a,b=b,a
+    print a, b
+    
 
 
