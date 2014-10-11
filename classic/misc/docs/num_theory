@@ -1,0 +1,15 @@
+We can solve this by looking at the digits in each position separately. For example, let N=1048365. We will count how many times the digit d appears in the position 8 currently is in. Write N as LcR, with L=104, c=8 and R=365. We will consider four cases.
+
+Case 1: d=0
+In this case, every number which has 0 in 8's current position should be of the form M0S. Since numbers are written without leading zeros, M has to be at least 1. And since L=104, M can be at most 104 as well. For each value of M, S can be any numerical string in [000…999]. Thus the total number of times 0 appears in 8's current position is 104×1000=104000.
+
+Case 2: 1≤d≤7
+The same conditions apply as earlier, except for the fact that M=0 gives valid solutions as well. Hence the number of times d appears in 8's current position is 105×1000=1050000.
+
+Case 3: d=8
+In this case, having M from [0…103] allows all 1000 values of S as earlier. But having M=104 allows us only S from [0…365] since taking a higher S will give us a number greater than N. Thus the total number of times 8 appears there is 104×1000+366=104366.
+
+Case 4: d>8
+In this case, we can have M only in the range [0…103]. For each value of M, all 1000 values of S are allowed and the total number of times d appears there is 104×1000=104000.
+
+Repeat the procedure for every position in N and every digit d. The counts for all digits can thus be calculated in O(10 log N).
