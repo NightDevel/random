@@ -1,0 +1,12 @@
+15256. Partition function (EASY)
+Problem code: PARCARD1
+
+You need to output the number of distinct ways of representing n as a sum of natural numbers (with order irrelevant) for all integer n from 0 to 10000 inclusive.
+
+First numbers of output must be:
+
+1 1 2 3 5 7 11 15 22 30 42 56 77
+
+Analysis:
+    Use euler equation: 
+catch: calculating pentagonal number again and again, just precompute them, will solve easily
