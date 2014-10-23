@@ -1,0 +1,46 @@
+SPOJ Problem Set (classical)
+
+8732. Best Fit
+
+Problem code: BFIT
+
+
+
+You are given a sequence of N random values (s1, s2, s3, s4, . . . . , sN)
+You have to find a function f(t) = a*t+b such that the Euclidean Distance between 
+the given sequence and the function values where t varies from 1 to N is minimum.
+
+In effect, you have to minimize
+
+
+
+Output the values a and b for each test case, rounded up to 4 decimal places.
+
+Input
+
+Line 1: T /* Number of test cases T <= 1000 */
+Line 2: N /* Number of values in first test case N <= 10000 */
+Line 3: s1 s2 s3 s4 … sN /* all values are less than 10000 and integers */
+.
+.
+.
+
+Output
+
+a b  /* Output the values a and b rounded up to 4 decimal places for each test case */
+
+Example
+
+Input:
+3
+3
+1 1 1
+3
+1 2 3
+3
+1 3 1
+
+Output:
+0.0000 1.0000
+1.0000 0.0000
+0.0000 1.6667

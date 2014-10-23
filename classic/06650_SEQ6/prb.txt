@@ -1,0 +1,33 @@
+6650. Consecutive sequence
+
+Problem code: SEQ6
+
+
+
+We define consecutive sequence as a sequence of integer numbers {n, n+1, n+2, ..., n+m}. For each given positive integer N ≤ 107 calculate number of such sequences which sum is equal to N.
+
+Input
+
+The input file consists of multiple lines (about 103 in the first data set and 105 in the second), each line contains integer N. The input is terminated with N = 0, which should not be processed.
+
+Output
+
+Expected number in each line
+
+Example
+
+Input:
+
+500
+0
+
+Output:
+
+8
+Added by:	Ruslan Sennov
+Date:	2010-05-14
+Time limit:	9s
+Source limit:	50000B
+Memory limit:	1536MB
+Cluster:	Cube (Intel Pentium G860 3GHz)
+Languages:	All except: PERL 6
