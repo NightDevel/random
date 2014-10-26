@@ -5,8 +5,15 @@ if [ "x$1" = "x" ]; then
     exit 0
 fi
 cat| fmt -w 80 > /tmp/.file 
-echo "*/
+echo "
 #include <stdio.h>
+
+#ifdef DEBUG
+#define dprintf(fmt, ...) do { fprintf(stderr, fmt, __VA_ARGS__); } while (0)
+#else
+#define dprintf(fmt, ...) 
+#endif
+
 int main()
 {
     int t;
