@@ -1,0 +1,66 @@
+21079. The Resistance
+
+Problem code: RESSTNCE
+
+
+
+A resistor is a passive two-terminal electrical component that implements electrical resistance as a circuit element. Resistors act to reduce current flow, and, at the same time, act to lower voltage levels within circuits. When multiple resistors are connected to each other in a circuit, the net resistance depends on how they are connected. The total resistance of resistors connected in series is the sum of their individual resistance values.
+
+A diagram of several resistors, connected end to end, with the same amount of current going through each
+
+ R_\mathrm{eq} = R_1  + R_2 + \cdots + R_n. 
+
+The total resistance of resistors connected in parallel is the reciprocal of the sum of the reciprocals of the individual resistors.
+
+A diagram of several resistors, side by side, both leads of each connected to the same wires
+
+ \frac{1}{R_\mathrm{eq}} = \frac{1}{R_1} + \frac{1}{R_2} + \cdots +  \frac{1}{R_n}. 
+
+In this problem, we are constructing a long network of resistors composed of N blocks. Every block has two 1 ohm resistors, shown below by the upper-left figure. We would like for you to measure the net resistance across the two leftmost terminals in a circuit with N blocks. If the circuit has one block (N=1), then the net resistance across the leftmost terminals is 1 ohm, because the horizontal resistor is not in a path connecting the leftmost terminals. Similarly, for a circuit with two blocks (N=2), the net resistance is 2/3 ohms. The figures below illustrate this.
+
+
+
+Find the resistance A/B of the circuit composed of N blocks. Since these values can be enormous, reduce the fraction A/B to lowest terms P/Q (i.e., gcd(P,Q) = 1), and then print (P mod M)/(Q mod M), where M is the given modulus.
+
+Input
+
+The first line contains T test cases. Each of the next T lines contains two integers N and M.
+
+Output
+
+For each test case, print on its own line the numerator and denominator of the net resistance across the leftmost terminals in lowest terms modulo M, seperated by only the '/' character.
+
+Constraints
+
+1 ≤ T ≤ 10
+1 ≤ N ≤ 106
+1 ≤ M ≤ 109
+Example
+
+Input:
+4
+1 1000000
+2 100
+2 2
+50 1000
+Output:
+1/1
+2/3
+0/1
+26/75
+
+
+Analysis:
+    if you calculate few terms they will be of the form
+
+1/1 2/3 5/8 13/21 .... it fibonacci series
+
+n term is like fib(2n-1)/fib(2n)
+
+gcd(fib(n-1), fib(n)) = 1
+
+just do fib(2n) using
+
+|1 1| power 2n-1 , fib(2n) = A[0][0], fib(2n-1) = A[0][1] 
+|1 0|
+                        
