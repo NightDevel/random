@@ -1,0 +1,84 @@
+18905. Kapti and Balu
+
+Problem code: NR1
+
+
+
+Kapti and Balu are friends. Kapti is very good in math and is always saying that no one can challenge him in math. One day Balu decided to check Kapti that he is really good in math or he is just making fool.
+
+Balu gave Kapti a polynomial of degree “n”  and ask Kapti to find constant term “L” if the polynomial was first expressed in Factorial Notation and then subjected to Forward Difference operator for “k”  imes.
+
+If     
+
+   f(x)=a1xn + a2xn-1 + ........... + anx + l                                                                                                              
+then its factorial notation will be:  
+
+   fFN(x)=A1[x]n + A2[x]n-1 + .......... + An[x] + L                                                                                                                                  
+
+Where 
+
+   [x]n=x(x-1)(x-2)......(x-n+1) 
+
+And forward difference operator Δ is just simple differentiation of  fFN(x).
+
+For example                                                                                                                 
+
+f(x)=2x3 - 3x2 + 3x - 10
+
+fFN(x)=2[x]3 + 3[x]2 + 2[x] - 10
+
+ΔfFN(x)=6[x]2 + 6[x] + 2  here constant term L=2 and k=1;
+
+Help kapti in proving himself that he is good in math.
+
+Input
+
+Input start with integer T(<30) denoting the number of test cases.
+
+Each test case will contains two lines,
+
+First line contains n(<=25) & k(<=n)
+
+Second line contains n+1 integers a1 a2 a3 ........ an l , -50<=ai<=50
+
+Output
+
+For each test case print one line containing  L.
+
+Example
+
+Input:
+
+1
+
+
+3  2
+
+
+2 -3 3 -10
+
+
+
+Output:
+6
+
+Analysis:
+a =     pow([x], n) = x * (x-1) * (x-2) * (x-3) .......(x-n+1)), number of terms is n
+coefficients of this polynomial are stirling first order
+
+b =     pow([x], n-1) = x * (x-1) * (x-2) * (x-3) ..... (x-n+2)  number of terms is n-1
+
+says if we have an equation of type 
+
+l*a + m * b = rearrange terms and sum up
+ A1 * pow(x, n) = B1 (given)
+ A1 * pow(x, n) + A2 * pow(x, n-1) = B2
+ A1 * pow(x, n) + A2 * pow(x, n-2) + A3 * pow(x, n-3) = B3
+
+we can solve A1, A2, A3 by substitution
+
+final equation is 
+A1 * [x,n] + A2 * [x, n-1] + A3 * [x, n-2]
+
+from here on plain differentiation
+
