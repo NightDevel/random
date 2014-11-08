@@ -1,0 +1,38 @@
+14888. Good Predictions
+
+Problem code: GOODB
+
+
+
+Having arrived at the ACM-ICPC contest site in a fun-filled mood, The Team continues their important pre-contest preparations. Specifically, every world-class team knows the importance of making predictions about their upcoming submissions.
+
+The Team knows that they'll get plenty of AC (Accepted) submissions, and they find those quite boring by now. As such, they'll focus on their incorrect ones. From their vast experience, The Team knows that they'll only get exactly N (1≤N≤300) submissions wrong throughout the upcoming contest - in fact, they predict that, of those, exactly W (0≤W≤100) will get WA (Wrong Answer), T (0≤T≤100) will get TLE (Time Limit Exceeded), and the remaining R (0≤R≤100) will get RE (Runtime Error). Note that W+T+R=N.
+
+Assuming that their predictions will certainly be correct, the members of The Team are wondering in how many ways that might occur. In other words, how many different ordered combinations of N incorrect results (each being WA, TLE, or RE) exist which satisfy their predictions? Since The Team doesn't make many mistakes, surely you can calculate this value, right? However, since it can get quite large for you, compute it modulo (109+7).
+
+Input
+
+4 integers, N, W, T, and R
+Output
+
+1 integer, the number of valid ordered combinations of submission results, modulo (109+7).
+
+Example
+
+Input:
+3 2 1 0
+
+Output:
+3
+Explanation of Sample:
+Out of 3 submissions, two are WA, while the third is TLE. The following 3 ordered combinations are then possible:
+
+WA, WA, TLE
+
+WA, TLE, WA
+
+or
+
+TLE, WA, WA
+
+The answer is then 3 modulo (109+7) = 3.

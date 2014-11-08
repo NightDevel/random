@@ -1,0 +1,56 @@
+19274. Operators
+
+Problem code: BLOPER
+
+
+
+Given a set of N integer A = {1, 2, 3, …, N} and a integer S, your task is find a way to insert an operator ‘+’ or ‘-‘ to every neighbor pair of A, that the result of the expression after insert equal to S.
+
+
+
+Input
+
+A single line, N and S (1 ≤ N ≤ 500, |S| ≤ 125250)
+
+Output
+
+If there are way(s) to insert, outputs any of them, otherwise outputs “Impossible” (without quotes).
+
+
+
+Example
+
+Input:
+	9 5
+
+Output:
+	1-2+3-4+5-6+7-8+9
+
+Input:
+
+	5 6
+
+Output:
+
+	Impossible
+
+ 
+
+You may want to try another version here
+
+Added by:	Kata
+Date:	2014-03-28
+Time limit:	1s
+Source limit:	50000B
+Memory limit:	256MB
+Cluster:	Pyramid (Intel Pentium III 733 MHz)
+Languages:	All
+
+
+Analysis: 
+Other way of looking at the problem is:
+divide the total set into two sets such that, 
+set(a) - set(b) = given sum
+
+set(a) are positive and 
+set(b) are negative numbers
