@@ -1,0 +1,35 @@
+12746. Colorful Circle (EASY)
+
+Problem code: CRCLE_UI
+
+
+
+------------------------
+I take this problem from my midterm exam today, because for me and some of my friends it's interesting, so I decided to translated this problem into english and upload this problem to SPOJ. See the original problem in indonesian language here.
+------------------------ 
+
+Given N sectors where 1<N<101000, from a circle that sown in the picture below:
+
+circle
+
+We will color each sector with K different colors, where 2<K<101000 such that each sector colored with one color and each adjacent sector must have different color. Your task is to count how many ways to color all that sectors.
+
+Input
+
+First line, there is a number T(0<T<1000) denoting number of test cases, then T lines follow.
+each line containing two integers: N and K separated by a space.
+
+Output
+
+For each test case, output number of ways to color the circle, since the number can be too large, take modulo 109+7.
+
+Example
+
+Input:
+2
+2 3
+3 3
+
+Output:
+6
+6

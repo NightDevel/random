@@ -17,3 +17,22 @@
 
 . precompute results and do binary search
 
+. while reading data use the following in python
+  faster reading input 
+    inp = sys.stdin.readlines()
+    T = int(inp[0].strip())
+    for i in range(1, T+1):
+        N, K = map(int, inp[i].strip().split())
+
+- if a is an interger and p is prime and (a % p != 0)
+   a^p(mod p) = a (mod p)
+   a^(p-1) % p = 1 % p
+
+   a^n % p =>
+
+    assume n > p
+    and n = k(p-1) + l
+    a^n % p = a ^ (k(p-1)). a^l % p
+            => a^(k(p-1))%p  = (a^(p-1))k % p = 1
+            = 1 . a ^ l % p
+            = a ^(n%(p-1)) % p

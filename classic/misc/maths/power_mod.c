@@ -1,4 +1,19 @@
 #include <stdio.h>
+
+long long power_mod(long long a,  long long p, int mod)
+{
+    /*while shifting the last bit is always 1, so the result will be in c */
+    long long c = 1;
+    while (p) {
+        if (p&1)
+            c = (c * a) % mod;
+        a = (a * a) % mod;
+        p = p>>1;
+    }
+    return c;
+}
+
+
 long long power_mod(long long a, int p, int m)
 {   
 	if (p == 1)

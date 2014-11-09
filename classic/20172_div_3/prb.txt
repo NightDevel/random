@@ -1,0 +1,73 @@
+Divisiblity by 3 rule is pretty simple rule: Given a number sum the digits of number and check if sum is divisible by 3.If divisible then it is divisible by 3 else not divisible.Seems pretty simple but what if we want to extend this rule in binary representation!!
+
+Given a binary representation we can again find if it is divisible by 3 or not. Making it little bit interesting what if only length of binary representation of a number is given say n.
+
+Now can we find how many numbers exist in decimal form(base 10) such that when converted into binary(base 2) form has n length and is divisible by 3 ?? (1 <= n < 2*10^18)
+
+
+
+Input
+
+ Length of binary form: n
+
+output
+
+Print in new line the answer modulo 1000000007.
+
+Example
+
+Input:
+1
+2
+Output:
+1
+2
+Explanation: For n=2 there are only 2 numbers divisible by 3 viz.0 (00) and 3 (11) and having length 2 in binary form.
+NOTE:There are multiple testfiles containing many testcases each so read till EOF.
+Warnings: Leading zeros are allowed in binary representation and slower languages might require fast i/o. Take care.
+Analysis:
+--------
+ 1 1
+ 2 2
+ 3 3
+ 4 6
+ 5 11
+ 6 22
+ 7 43
+ 8 86
+ 9 171
+ 10 342
+ 11 683
+ 12 1366
+ 13 2731
+ 14 5462
+ 15 10923
+ 16 21846
+ 17 43691
+ 18 87382
+ 19 174763
+
+observing the input/output
+tn = 2 * t(n-1) for even n
+tn = 2 * t(n-1) - 1 for odd n
+
+t(1) = 1
+t(0) = 1
+tn = 2 * t(n-1) here t(n-1) must be odd
+tn = 2 * (2 t(n-2) - 1)
+   = 2^2 t(n-2) - 2
+   = 2^2 * (2 t(n-3)) - 2
+   = 2^3 t(n-3) - 2
+   = 2^3 (2t(n-4)-1) - 2
+   = 2^4 t(n-4) - 2 - 2^3
+   = 2^(n) - 2 - 2^3 - 2^5 ... - 2^(n-1)
+   = 2^(n) - 2 (1 + 2^2 + 2^4 + ..... + 2^(n-2))
+   = 2^(n) - 2 (4^(n-1)/2 - 1)/3
+   = 2^(n) - 2 (2^(n-1) - 1)/3
+   = (2^n+2)/3
+tn = (2^n+1)/3 for odd
+
+((2^n+2)/3) % p  = ((2^n+2)%p * (1/3) % p)% p
+(1/3) % p = inverse modulus of 3 = 333333336
+
+((2^n+2)/3) % p  = ((2^n+2)%p * 333333336)% p
