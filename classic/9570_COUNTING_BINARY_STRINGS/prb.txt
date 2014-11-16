@@ -1,0 +1,47 @@
+9570. Counting binary strings
+
+Problem code: STRCOUNT
+
+
+Let f(n,k) is the number of length n binary strings for which the length of the longest substring of ones is equal to k. You have to build a table of these values.
+
+Input
+
+None.
+
+Output
+
+63 lines - the n-th of them consists of n+1 values: f(n,0) f(n,1) ... f(n,n).
+
+Example
+
+1 1 
+1 2 1 
+1 4 2 1 
+1 7 5 2 1
+
+...
+
+analysis:
+========
+
+msb                                            ----r-1 1's followed by 0---
+bits      0        10         110             1111110 
+[n,r] = [n-1,r] + [n-2, r] + [n-3, r] + ....+[n-k, r] i.e n-k = r
+[6,3] = [5,3]   + [4,3]    + [3,3] 
+
+[5,3] = all strings with leading msb is zero
+[4,3] = all strings with leading msb digits are 10 remaining 4 digits contribute [4,3]
+[3,3] = all strings with leading msb digits are 110 remaining 3 digits contribute [3,3]
+
+now 
+leading digits are 111, next digit should be 0, else it will count to 4 digits
+so the sequence is 1110 last two digits can be anything i.e [2,0] + [2,1] + [2,2]
+
+Imagine a sequence with [n,r], we summed up until n-k  elements
+we should now sum up remaining elements i.e from sum ([n-k-1, i) i = 0 to r and n-k-1 >= i 
+i.e n-k-1 units can have upto r ones;
+
+[n,r] = sum(k, r) ; k = n-1 to n-k
+        +
+        sum(n-k-1, i); i = 0 to r
