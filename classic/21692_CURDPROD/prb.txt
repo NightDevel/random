@@ -1,0 +1,90 @@
+21692. CURD PRODUCERS
+
+Problem code: CURDPROD
+
+
+A curd manufacturing factory owns curd producing machines of different qualities. A curd producer of quality q produces 1 unit of curd in q units of time.
+
+
+For example, a curd producer of quality 5 produces 1 unit of curd at time 5, 1 unit of curd at time 10 and so on..
+
+Given the qualities of all the machines, find the minimum time required to produce T units of curd.
+
+
+
+Input:
+
+The first line consists of an integer t, the number of test cases. For each testcase, the first line consists of 2 integers n and T, the number of machines and the target amount of curd. The next n lines consists of integers representing the qualities of the producer machines.
+ 
+
+Output:
+
+For each test case, find the minimum time required to produce the target amount of curd.
+
+
+
+Input Constraints:
+
+1 <= t <= 10^2
+
+1 <= n <= 10^4
+
+1 <= T <= 10^9
+
+1 <= quality of each machine <= 10^9
+
+
+
+Note: Note that a quality 5 producer produces only 1 curd at time 9 and not 1.8.
+
+
+Sample Input:
+
+3
+
+2 3
+
+5
+
+10
+
+3 1000000
+
+1
+
+2
+
+3
+
+1 1000000000
+
+1000000000
+
+
+
+Sample Output:
+
+10
+
+545455
+
+1000000000000000000
+
+
+Analysis:
+========
+the maximum time that can take to make curd is
+
+time = min(values) * total_curds
+
+min = 0
+max = time
+
+now do binary search, i.e m = (min+max)/2
+
+calculate for each machine, the number of curds it can produce in m time, 
+if total sum of all machines is equal to total_curds problem solved
+or
+(m) < tsum <= (m+1)
+
+
