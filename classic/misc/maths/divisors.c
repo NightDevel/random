@@ -117,12 +117,12 @@ void factor(int n)
 
 int main(int argc, char *argv[])
 {
-	int n;
+	long long n;
     if (argc != 2) {
         printf("Usage: %s number\n", argv[0]);
         exit(0);
     }
-    n = atoi(argv[1]);
+    n = atol(argv[1]);
 	generate_primes();
     factor(n);
 	return 0;
