@@ -1,0 +1,68 @@
+SPOJ Problem Set (classical)
+
+21332. Pigeonhole Tower
+
+Problem code: PHT
+
+
+ 
+
+Pigeon SSNA want to build a tower with some wood walls. Let's describe the tower they want to make:
+
+A Tower can consist of different number of level.
+If a tower contain L levels then 1st level must contain L  holes , 2nd level L-1 , 3rd level L-2 ….. L level contain 1 hole .
+Each room contain 3 wood walls.
+See the picture below:
+
+ 
+
+                                 3 level                    4level
+
+                                           3 Level Tower                                      4 Level tower
+
+ 
+
+Now pigeon SSNA has n wood walls. What is maximum number of level he can made.  
+
+ 
+
+Input
+
+Input starts with an integer T (≤ 100000), denoting the number of test cases.
+
+Each case starts with a line containing an integer n (1 ≤ n ≤ 1012)
+
+ 
+
+Output
+
+For each case of input you have to print the case number and expected answer.
+
+Sample Input
+
+Output for Sample Input
+
+2
+
+15
+
+24
+
+Case 1: 3
+
+Case 2: 4
+
+analysis:
+layer l required 2*l-1 sticks
+
+so sum of first l odd numbers = (l)^2 
+1, 3, 5, 7, 9, ... , 2*l-1
+
+but we should not add 1 (becoz first valid tower has 3 sticks): (l*l)/4 - 1
+
+l^2/4 - 1 = p => l = sqrt(4 * (p+1)) = 2 * sqrt(p+1)
+now l = total terms i.e like 1,2,3,4,5,6,7,8,9,10,11,12 here there are 6 odd term n 6 even terms
+what we get here is l = 12, l/2 = 6 is the total odd terms.
+
+so sqrt(p+1) is the total tower level, 1 is not there so 
+sqrt(p+1)-1 is the answer

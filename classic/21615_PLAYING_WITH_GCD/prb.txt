@@ -1,0 +1,52 @@
+21615. Playing with GCD
+
+Problem code: NAJPWG
+
+
+Tanmoy recently learn about euclid gcd algorithm.
+
+This algorithm looks like:
+
+gcd(a,b):
+
+   if(b==0):return a
+
+   return gcd(b,a%b)
+
+Now he want to find out how many pair (x,y) can be possible in range N, which gcd is greater than 1. Here pair (x,y) and (y,x) consider as same pair. 1<=x,y<=N.
+
+He can find out it small number easily but for a large number its realy hard to find out. Now he needs your help. Write a programme that find out number of such pair.
+
+Input: 
+
+Input start with an integer number T(≤10^5), which is number of test cases.
+
+Each test case contain a integer N (1≤N≤10^5).
+
+Output:
+
+For each case, Print case Number and Desired answer
+
+Sample:
+
+Input
+
+Output
+
+2
+3
+4
+
+ 
+
+Case 1: 2
+Case 2: 4
+
+Analysis:
+========
+Thus, if n is a positive integer, then φ(n) is the number of integers k in the range 1 ≤ k ≤ n for which the greatest common divisor gcd(n, k) = 1
+
+According to problem we have to find the complement of totient function.
+
+puttin in other way given N: N*(N+1)/2 provides all pairs
+N*(N+1)/2 - totient(N) is the solution
