@@ -1,0 +1,58 @@
+17399. G Force
+
+Problem code: DCEPC12G
+
+
+Prime(n) is defined as  number of primes less than equal to N.
+
+Totient(n) is defined as the number of positive integers less than or equal to n that are relatively prime to n.
+
+F(N) = Prime(n) – Totient(n) 
+
+and we don’t like negative values, so if F(n) < 0, consider it as 0.
+
+G(n) = Totient(n) ^ (Factorial (F(N)))
+
+ 
+
+You are given a number N. You have to output G(N) % 10^9+7.
+
+Input
+
+First line consists of T, the number of test cases.
+
+Each of the next T lines contains one integer N.
+
+Output
+
+Output T lines each line containing the value of function G(N) % 10^9+7
+
+Constraints
+
+1<=T<=100
+
+1<=N<=10000000
+
+Example
+
+Input:
+1
+2
+
+Output:
+1
+
+
+Analysis:
+========
+generate primes and get euler totient and primes diff
+
+we were asked to find the totient ^ (factorial(diff))
+
+factorial(n) = 1 if n = 0
+             = n * (n-1)  * (n-2) .... 1
+
+it turns out max diff is 2, 
+ie. fact(2) = 2
+    fact(1) = 1
+    so take care of diff when it is zero, i.e set it to 1 and that's it
