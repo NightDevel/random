@@ -1,0 +1,50 @@
+SPOJ Problem Set (classical)
+
+21853. Rivals
+
+Problem code: RIVALS
+
+ 
+
+Mohamed Yasser (AKA Abo-3obaida) and Mohamed Ahmed (AKA Nesr) pretend to be rivals, the two clearly have a deep and understanding friendship. One day they imagine that the city is a 2D plane with Cartesian coordinate system, the two rivals are located in point (0,0), and they are targeting point (X,Y). They can make two moves only: 1) move right to point (x + 1, y). 2) move up to point (x, y + 1). Nesr immediately said: "I've figured out how many ways are there to reach our target". Abo-3obaida replied: "I'll not lose this challenge". Could you help Abo-3obaida to figure out how many ways to the target?! Since the required number may be very large, find its remainder of division by 1000000007 (109+7).
+Mohamed Yasser (AKA Abo-3obaida) and Mohamed Ahmed (AKA Nesr) pretend to be rivals, the two clearly have a deep and understanding friendship.
+
+One day they imagine that the city is a 2D plane with Cartesian coordinate system, the two rivals are located in point (0,0), and they are targeting point (X,Y).
+
+They can make two moves only:
+1) move right to the point (X + 1, Y).
+2) move up to the point (X, Y + 1).
+
+Nesr immediately said: "I've figured out how many ways are there to reach our target".
+Abo-3obaida replied: "I'll not lose this challenge".
+
+Could you help Abo-3obaida to figure out how many ways to the target?!
+
+Since the required number may be very large, find its remainder of division by 1000000007 (109 + 7).
+
+Input
+
+The first line of input contains an integer T (1 <= T <= 1000) followed by T test cases.
+
+Each case contains two space-separated integers  X,  Y (0 <= X, Y <= 106).
+
+Output
+
+For each test case, print a single integer the answer to the problem modulo 1000000007 (109 + 7).
+
+Example
+
+Input:
+3
+1 3
+2 4
+5 3
+
+Output:
+4
+15
+56
+
+:
+C(m+n, n)
+(m+n)!/(m! * n!)
