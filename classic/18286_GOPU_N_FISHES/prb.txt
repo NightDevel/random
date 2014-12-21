@@ -1,0 +1,52 @@
+SPOJ Problem Set (classical)
+
+18286. Gopu and Fishes
+
+Problem code: IITWPC4J
+
+Gopu is playing with fishes, He likes playing them very much because they are lovely creatures. There are n fishes, All the n fishes are kept in n aquariums. Each fish is kept in different aquarium.
+
+While he is playing with them, there comes a magic instant in his play. At that instant, fish in aquarium i can go to aquarium j with probability p[i][j]. At this magic instant, all the fishes go to aquariums according to their probabilities.
+
+Now there is a slight issue in this, If more than one fishes land on the same aquarium, Then they can not survive because of lack of space. You have to find the probability that none of Gopu's fishes dies, otherwise he would be very sad. 
+
+Please help our little Gopu so that he could keep playing with his fishes :)
+
+Input
+
+First line contains number of test cases : T (1 <= T <= 1000)
+
+Next line contains n : number of fishes (1 <= n <= 15).
+
+For next n lines, each line contains n space seperated real numbers. In line i, jth number is p[i][j]. p[i][j] is precise upto 6 decimal digits.
+
+Output
+
+For each test case, print the probability that none of Gopu's fishes dies. (probability is a real number and it should not have error more than 1e-6), That is your answer should be correct upto 6 decimal digits.
+
+Example
+
+Input:
+2
+2
+1 0
+0 1
+2
+0.5 0.5
+0.5 0.5
+
+Output:
+1.000000
+0.500000
+Added by:	praveen123
+Date:	2014-02-03
+Time limit:	1s-10s
+Source limit:	50000B
+Memory limit:	1536MB
+Cluster:	Cube (Intel Pentium G860 3GHz)
+Languages:	All
+Resource:	IITK ACA CSE online judge
+
+Analysis:
+========
+use bottom up DP: multiply
