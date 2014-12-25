@@ -1,0 +1,66 @@
+15561. Find Number Of Pair of Friends
+
+Problem code: IITKWPCH
+
+    You are given n numbers. Any two number are called friends if they have some digit common. eg. (11, 12) and (15, 4561) are friends but (33, 556) is not.
+
+    Find out no of pairs which are friends.
+
+    (Formally speaking Let us assume the n numbers be are stored in array a[]. You have to find out number of i and j pairs such that i < j and a[i] and a[j] are friends.).
+
+Input
+
+T : no of test cases (T >= 1 && T <= 7) 
+For each test case, you will be given two lines, first line will contain n <= 10^6
+then in next n line each line will contain a single integer representing a[i] (a[i] >= 1 && a[i] <= 10^18)
+
+Output
+
+For every test case print a line 
+containing number of such pairs as mentioned in the problem statement.
+
+Example
+
+Input:
+4
+2
+12 13
+3
+10 12 24
+3
+5 6 7
+4
+10 11 211 3
+Output: 
+1
+2
+0
+3
+Analysis:
+========
+hashing: but convert into binary number
+eg: 1234561, 12
+1234561: value becomes (1<<1)|(1<<2)|(1<<3)|(1<<4)|(1<<5)|(1<<6)|(1<<1) = 126
+12                  :  (1<<1)|(1<<2) = 6
+
+12 and 21 will hash to same location: 6
+
+no matter how big the number is: they have to hash to 0-1023, (1<<0)|(1<<1)|(1<<2)| ..... |(1<<9)
+
+maintain a count of each bucket from 0-1023
+
+and each of the bucket values
+
+and if result is 1: i.e they have a common number
+
+if count of the bucket (either of them is greater than 1) then
+
+i, j: be the bucket indices
+if (i&j)
+    tcnt = count[j] 
+if (count[i] > 0)
+    cnt += count[i] * (count[i]-1)/2 => (i&i > 0 and so cnt of all values hashed to same bucket);
+        + count[i] * tcnt   => (anding with all other values);
+
+
+
